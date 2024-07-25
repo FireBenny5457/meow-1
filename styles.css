@@ -18,6 +18,18 @@ body {
     transition: transform 0.2s ease;
 }
 
+.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #C8ACD6;
+    background-color: #2E236C;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
 #ralsei.pulse {
     transform: scale(1.1);
 }
