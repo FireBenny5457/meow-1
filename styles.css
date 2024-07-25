@@ -23,8 +23,7 @@ body {
 }
 
 #counter {
-    text-align: center;
     font-size: 24px;
-    color: #C8ACD6; /* Text color */
+    color: #C8ACD6; /* Points text color */
     margin-top: 20px;
 }
