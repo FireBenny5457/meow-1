@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benji's page!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .button { padding: 10px 20px; font-size: 16px; color: white; background: blue; text-decoration: none; border-radius: 5px; }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .spin { animation: spin 2s linear; }
+</style>
+<body>
+    <div class="container">
+        <img src="benji.png" alt="Profile Picture" class="profile-pic">
+        <div class="social-buttons">
+            <a href="https://steamcommunity.com/id/FireBenny/" class="button">Steam</a>
+            <a href="https://discord.gg/29UHEBZs" class="button">Discord</a>
+            <a href="https://t.me/FireBenny5457" class="button">Telegram</a>
+            <a href="javascript:void(0);" class="button" onclick="document.body.classList.add('spin'); setTimeout(() => document.body.classList.remove('spin'), 2000);">Spiiiinnnn</a>
+        </div>
+    </div>
+</body>
+</html>
