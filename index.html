@@ -6,12 +6,61 @@
     <title>Ralsei Booper!!</title>
      <link rel="icon" href="https://mystickermania.com/cdn/stickers/undertale/sticker_2120-512x512.png">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* You can also include the CSS here if needed */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #game {
+            text-align: center;
+        }
+
+        #ralsei {
+            width: 150px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #ralsei.pulse {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+
+        #counter {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
     <div id="game">
         <img id="ralsei" src="ralsei.png" alt="Ralsei">
         <div id="counter">Points: 0</div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        let points = 0;
+        const ralsei = document.getElementById('ralsei');
+        const counter = document.getElementById('counter');
+
+        function handleClick() {
+            points++;
+            counter.textContent = `Points: ${points}`;
+            pulseEffect();
+        }
+
+        function pulseEffect() {
+            ralsei.classList.add('pulse');
+            setTimeout(() => ralsei.classList.remove('pulse'), 200);
+        }
+
+        ralsei.addEventListener('click', handleClick);
+    </script>
 </body>
 </html>
