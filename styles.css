@@ -3,39 +3,44 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f0f0f0;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #17153B;
 }
 
-.container {
+#game {
     text-align: center;
 }
 
-.profile-pic {
+#ralsei {
     width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #2E236C;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.social-buttons {
+#ralsei.pulse {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+#counter {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+#leaderboard-btn {
+    margin: 20px;
+}
+
+#leaderboard {
     margin-top: 20px;
 }
 
-.button {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #C8ACD6;
-    background-color: #2E236C;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+.hidden {
+    display: none;
 }
 
-.button:hover {
-    background-color: #433D8B;
+#leaderboard-list {
+    list-style-type: none;
+    padding: 0;
 }
