@@ -27,20 +27,3 @@ body {
     font-size: 24px;
     margin: 20px 0;
 }
-
-#leaderboard-btn {
-    margin: 20px;
-}
-
-#leaderboard {
-    margin-top: 20px;
-}
-
-.hidden {
-    display: none;
-}
-
-#leaderboard-list {
-    list-style-type: none;
-    padding: 0;
-}
