@@ -5,30 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ralsei Booper!</title>
     <link rel="icon" href="https://mystickermania.com/cdn/stickers/undertale/sticker_2120-512x512.png">
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+        import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA5spQkXK6GzfWQqknXy2bdE8UCmu_fvRw",
+            authDomain: "femboybenji-10f9b.firebaseapp.com",
+            projectId: "femboybenji-10f9b",
+            storageBucket: "femboybenji-10f9b.appspot.com",
+            messagingSenderId: "757466753942",
+            appId: "1:757466753942:web:8fe282c020ad5af0b88bb7"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // JavaScript code to handle the Ralsei clicker
+        document.addEventListener('DOMContentLoaded', () => {
+            const ralsei = document.getElementById('ralsei');
+            const counter = document.getElementById('counter');
+
+            let points = 0;
+
+            // Fetch points from Firebase
+            function fetchPoints() {
+                const pointsRef = ref(database, 'points');
+                onValue(pointsRef, (snapshot) => {
+                    points = snapshot.val() || 0;
+                    counter.textContent = `Points: ${points}`;
+                });
+            }
+
+            // Update points in Firebase
+            function updatePoints(newPoints) {
+                set(ref(database, 'points'), newPoints);
+            }
+
+            // Handle click event
+            function handleClick() {
+                points++;
+                counter.textContent = `Points: ${points}`;
+                updatePoints(points);
+                pulseEffect();
+            }
+
+            // Add pulse effect to Ralsei image
+            function pulseEffect() {
+                ralsei.classList.add('pulse');
+                setTimeout(() => ralsei.classList.remove('pulse'), 200);
+            }
+
+            ralsei.addEventListener('click', handleClick);
+
+            // Fetch and display points when page loads
+            fetchPoints();
+        });
+    </script>
 </head>
 <body>
     <div id="game">
         <img id="ralsei" src="ralsei.png" alt="Ralsei">
         <div id="counter">Points: 0</div>
     </div>
-    <script>
-        let points = 0;
-        const ralsei = document.getElementById('ralsei');
-        const counter = document.getElementById('counter');
-
-        function handleClick() {
-            points++;
-            counter.textContent = `Points: ${points}`;
-            pulseEffect();
-        }
-
-        function pulseEffect() {
-            ralsei.classList.add('pulse');
-            setTimeout(() => ralsei.classList.remove('pulse'), 200);
-        }
-
-        ralsei.addEventListener('click', handleClick);
-    </script>
 </body>
 </html>
