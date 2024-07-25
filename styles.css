@@ -12,6 +12,10 @@ body {
     text-align: center;
 }
 
+.container {
+    text-align: center;
+}
+
 #ralsei {
     width: 150px;
     cursor: pointer;
