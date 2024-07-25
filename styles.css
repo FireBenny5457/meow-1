@@ -3,9 +3,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #17153B;
 }
 
 #game {
@@ -15,7 +15,7 @@ body {
 #ralsei {
     width: 150px;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.5s ease;
 }
 
 #ralsei.pulse {
